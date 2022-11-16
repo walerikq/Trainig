@@ -27,8 +27,6 @@ public class FirstRequest {
         CloseableHttpResponse response =
                 httpClient.execute(request);
 
-        String result = EntityUtils.toString(response.getEntity());
-        System.out.println(result);
 
     }
 }
