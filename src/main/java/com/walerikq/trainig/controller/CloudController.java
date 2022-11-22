@@ -1,11 +1,10 @@
 package com.walerikq.trainig.controller;
 
-import com.walerikq.trainig.model.RequestDto;
+import com.walerikq.trainig.model.Model;
+import com.walerikq.trainig.service.ModelService;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
@@ -14,16 +13,17 @@ import javax.validation.constraints.NotNull;
 @RequestMapping("/requestCounter")
 public class CloudController {
 
-    private final RequestDto requestDto;
+//    private final Model model;
+    private final ModelService service;
 
     @GetMapping("/testPost")
     public void requestDtoReturner(@NotNull String line){
-        requestDto.requestCounter();
-        requestDto.setLastLineRequest(line);
+        service.requestCounter();
+        service.lastLineReturner(line);
     }
 
     @GetMapping("/answer")
-    public RequestDto requestDtoReturner(){
-        return requestDto;
+    public Model requestDtoReturner(){
+        return service.getModel();
     }
 }
