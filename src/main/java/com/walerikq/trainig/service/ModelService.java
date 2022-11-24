@@ -9,25 +9,27 @@ import org.springframework.stereotype.Service;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Service
 public class ModelService {
-    private Model model;
-    int count;
-    String lastLineRequest;
 
+    private int count;
+    private String lastLineRequest;
+
+    public ModelService(int count, String lastLineRequest) {
+        this.count = count;
+        this.lastLineRequest = lastLineRequest;
+    }
 
     public void requestCounter(){
-        int count = model.getCountRequest();
-        model.setCountRequest(count++);
+        ++count;
     }
 
     public void lastLineReturner(String line){
         lastLineRequest = line;
-        model.setLastLineRequest(lastLineRequest);
     }
 
     public Model getModel(){
-        return model;
+        return new Model(count,lastLineRequest);
     }
 }

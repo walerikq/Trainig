@@ -22,7 +22,7 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<?> handleAccessException(ConstraintViolationException ex) {
-
+        log.error(ex.getMessage(),ex);
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ExceptionResponse(400, ex.getMessage()));
