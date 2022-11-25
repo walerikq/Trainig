@@ -16,11 +16,6 @@ public class ModelService {
     private int count;
     private String lastLineRequest;
 
-    public ModelService(int count, String lastLineRequest) {
-        this.count = count;
-        this.lastLineRequest = lastLineRequest;
-    }
-
     public void requestCounter(){
         ++count;
     }
