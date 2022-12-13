@@ -17,7 +17,7 @@ public class CloudController {
     private final ModelService service;
 
     @GetMapping("/testPost")
-    public void requestDtoReturner(@NotNull String line){
+    public void clientsRequest(@NotNull String line){
         service.requestCounter();
         service.lastLineReturner(line);
     }

@@ -1,15 +1,12 @@
 package com.walerikq.trainig.service;
 
 import com.walerikq.trainig.model.Model;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 @Data
 @NoArgsConstructor
-
 @Service
 public class ModelService {
 
